@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var PersonImpl = /** @class */ (function () {
     function PersonImpl(name, age, salary) {
         this.name = name;
@@ -16,3 +18,5 @@ var PersonImpl = /** @class */ (function () {
     };
     return PersonImpl;
 }());
+var p = new PersonImpl("Oliver", 27, 100);
+console.log(p.toString());

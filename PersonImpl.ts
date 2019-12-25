@@ -1,8 +1,4 @@
-interface Person {
-    getName:() => string
-    toString:() => string;
-}
-
+import {Person} from '../test/Person'
 
 class PersonImpl implements Person {
     private name: string;
@@ -15,12 +11,14 @@ class PersonImpl implements Person {
         this.salary = salary;
     }
 
-    get getName(): string {
+    public get getName(): string {
        return  this.name;
     }
 
     toString(): string {
         return `${this.name} (${this.age}) (${this.salary})`; // As of version 1.4
     }
-
 }
+var p = new PersonImpl("Oliver",27,100);
+
+console.log(p.toString());
