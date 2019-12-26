@@ -6,6 +6,9 @@ enum SEX{
     DIV
 }
 
+/**
+ * Try and Error ;-)
+ */
 class PersonImpl implements Person {
     private name: string;
     private age: number;

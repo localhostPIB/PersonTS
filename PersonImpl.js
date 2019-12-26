@@ -6,6 +6,9 @@ var SEX;
     SEX[SEX["FEMALE"] = 1] = "FEMALE";
     SEX[SEX["DIV"] = 2] = "DIV";
 })(SEX || (SEX = {}));
+/**
+ * Try and Error ;-)
+ */
 var PersonImpl = /** @class */ (function () {
     function PersonImpl(name, age, salary, sex) {
         this.name = name;
