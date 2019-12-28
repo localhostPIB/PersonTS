@@ -5,7 +5,7 @@ var SEX;
     SEX[SEX["MALE"] = 0] = "MALE";
     SEX[SEX["FEMALE"] = 1] = "FEMALE";
     SEX[SEX["DIV"] = 2] = "DIV";
-})(SEX || (SEX = {}));
+})(SEX = exports.SEX || (exports.SEX = {}));
 /**
  * Try and Error ;-)
  */
@@ -23,25 +23,33 @@ var PersonImpl = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
+    Object.defineProperty(PersonImpl.prototype, "getAge", {
+        get: function () {
+            return this.age;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    PersonImpl.prototype.setAge = function (age) {
+        this.age = age;
+    };
     PersonImpl.prototype.setName = function (name) {
         this.name = name;
     };
     PersonImpl.prototype.setSalary = function (salary) {
         this.salary = salary;
     };
-    Object.defineProperty(PersonImpl.prototype, "getSex", {
-        get: function () {
-            return this.sex;
-        },
-        enumerable: true,
-        configurable: true
-    });
+    PersonImpl.prototype.getSex = function () {
+        return this.sex;
+    };
     PersonImpl.prototype.toString = function () {
         return this.name + " (" + this.age + ") (" + this.salary + ") (" + this.sex + ")"; // As of version 1.4
     };
     return PersonImpl;
 }());
+exports.PersonImpl = PersonImpl;
 var p = new PersonImpl("Oliver", 27, 100, SEX.MALE);
+exports.person = p;
 console.log(p.toString());
 p.setName("Olli");
 p.setSalary(7.77);

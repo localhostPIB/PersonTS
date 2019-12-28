@@ -1,6 +1,6 @@
 import {Person} from '../test/Person'
 
-enum SEX{
+export enum SEX{
     MALE,
     FEMALE,
     DIV
@@ -9,7 +9,7 @@ enum SEX{
 /**
  * Try and Error ;-)
  */
-class PersonImpl implements Person {
+export class PersonImpl implements Person {
     private name: string;
     private age: number;
     private salary: number;
@@ -26,6 +26,14 @@ class PersonImpl implements Person {
        return  this.name;
     }
 
+    public get getAge(): number {
+        return  this.age;
+    }
+
+    public setAge(age:number): void{
+        this.age = age;
+    }
+
     public setName(name:string): void{
        this.name = name;
     }
@@ -34,7 +42,7 @@ class PersonImpl implements Person {
         this.salary = salary;
     }
 
-    public get getSex(): SEX{
+    public getSex(): SEX{
         return this.sex;
     }
 
@@ -42,7 +50,8 @@ class PersonImpl implements Person {
         return `${this.name} (${this.age}) (${this.salary}) (${this.sex})`; // As of version 1.4
     }
 }
-var p = new PersonImpl("Oliver",27,100,SEX.MALE);
+ var p = new PersonImpl("Oliver",27,100,SEX.MALE);
+export{p as person}
 console.log(p.toString());
 
 p.setName("Olli");
