@@ -1,2 +1,2 @@
 # PersonTS
-My first classes in TypeScript.
+My first classes in TypeScript, sorry ;-) .
